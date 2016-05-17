@@ -84,11 +84,11 @@ The above two lines of code will Resolve the type `CourierBusinessClass` and loo
 ```C#
   var fedexInstance = container.Resolve<CourierBusinessClass>("FedexCourier");
   ViewBag.fedexCourierPrice = fedexInstance.GetLatestPrices();
-  ```
+```
   The next two lines creates a new instance of CourierBusinessClass but this time, it will inject a new instance of `FedexCourierRepository` and execute the `GetLatestPrices()` inside it. 
   
   Below is the code in `CourierBusinessClass
-  ```C#
+```C#
   public class CourierBusinessClass
     {
         private ICourierRepository _courierRepostitory;
@@ -104,8 +104,10 @@ The above two lines of code will Resolve the type `CourierBusinessClass` and loo
             return message;
         }
     }
-    ```
-    Because of Unity Framework, we do not need to `New` the instances in the Business class, Unity does that for us and maps it to appropriate Class based on our configuration files.
+```
     
-    ## License
+
+Because of Unity Framework, we do not need to `New` the instances in the Business class, Unity does that for us and maps it to appropriate Class based on our configuration files.
+    
+## License
 The project is open source and all the code is available online at Microsoft Website,
